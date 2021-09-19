@@ -7,7 +7,15 @@
     <title>Usuário</title>
 </head>
 <body>
-    <h1><%=name%></h1>
-    <h4><%=phone%></h4>
+
+    <%- include('partials/navbar.ejs',{title:"Users"})%>
+
+    <% for(let user of users){ %>
+        <%if(user.id % 2 == 0){%>
+            <h1><%=user.name%></h1>
+            <h4><%=user.phone%></h4>
+        <%}%>
+    <%}%>
+    
 </body>
 </html>
